@@ -23,10 +23,11 @@
     "build:cjs": "tsc --project tsconfig.cjs.json",
     "build:esm": "tsc --project tsconfig.esm.json",
     "build": "run-s clean build:cjs build:esm copy-esm-package",
-    "preinstall": "run-s build",
+    "prepublishOnly": "run-s build",
     "copy-esm-package": "copyfiles configs/_package.esm.json dist/esm/package.json",
     "lint": "eslint . --max-warnings 0",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Milton Carlos Katoo <mckatoo@gmail.com> (https://github.com/mckatoo)",
@@ -41,7 +42,8 @@
     "npm-run-all2": "^8.0.4",
     "rimraf": "^6.1.2",
     "ts-jest": "^29.3.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "winston": "^3.17.0"
