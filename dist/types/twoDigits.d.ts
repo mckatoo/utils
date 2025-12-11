@@ -1,2 +1,2 @@
-declare const _default: (n: number) => string;
-export default _default;
+declare const twoDigits: (n: number) => string;
+export default twoDigits;
